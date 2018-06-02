@@ -6,12 +6,46 @@ import NamePlant from './../components/NamePlant';
 import TpmPlant from './../components/TpmPlant';
 
 
+
 class AddPlant extends Component {
   render() {
+
+    const BasicExample = () => (
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/addplant/image">Image</Link>
+            </li>
+            <li>
+              <Link to="/addplant/name">Name</Link>
+            </li>
+          </ul>
+
+          <hr />
+
+          <Route path="/addplant/name" component={Name} />
+          <Route path="/addplant/image" component={Image} />
+        </div>
+      </Router>
+    );
+
+
+    const Name = () => (
+  <div>
+    <NamePlant />
+  </div>
+);
+
+const Image = () => (
+  <div>
+    <ImagePlant />
+  </div>
+);
+
     return (
-      <div className="center">
-        <h1>Add your first plant</h1>
-        <NamePlant/>
+      <div>
+        {BasicExample()}
       </div>
     );
   }

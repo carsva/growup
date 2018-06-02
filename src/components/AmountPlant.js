@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 class AmountPlant extends Component {
   render() {
@@ -16,7 +18,7 @@ class AmountPlant extends Component {
           <option value="8">8</option>
         </select>
         <br/>
-        <button>Next</button>
+        <Link to="/addplant/tpm"><button>Next</button></Link>
       </div>
     );
   }

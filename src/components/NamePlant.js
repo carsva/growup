@@ -6,7 +6,7 @@ class NamePlant extends Component {
     return (
       <div className="center">
           <input type="text" ref="name" placeholder="Name of your plant"></input>
-          <button>Next</button>
+          <Link to="/addplant/image"><button>Next</button></Link>
           <br/>
       </div>
     );

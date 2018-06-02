@@ -19,10 +19,7 @@ class App extends Component {
           <Route exact path="/" component={Intro} />
           <Route path="/reg" component={Reg} />
           <Route path="/addplant" component={AddPlant} />
-            <Route path="/addplant/name" component={NamePlant} />
-            <Route path="/addplant/image" component={ImagePlant} />
-            <Route path="/addplant/amount" component={AmountPlant} />
-            <Route path="/addplant/times" component={TpmPlant} />
+          
         </div>
       </Router>
     );
