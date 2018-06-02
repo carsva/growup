@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import Home from './../pages/Home';
 
 class TpmPlant extends Component {
   render() {
+
     return (
       <div className="center">
           <h5>How many times per month does your plant need water?</h5>
@@ -18,7 +19,7 @@ class TpmPlant extends Component {
             <option value="8">8</option>
           </select>
           <br/>
-          <button>Next</button>
+          <Link to="./"><button>Next</button></Link>
         </div>
     );
   }

@@ -6,7 +6,7 @@ class Reg extends Component {
     return (
       <div className="center">
         <h2>Click the button to register</h2>
-        <Link to="./addplant"><button>Register</button></Link>
+        <Link to="./addplant/name"><button>Register</button></Link>
       </div>
     );
   }

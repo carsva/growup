@@ -4,6 +4,7 @@ import AmountPlant from './../components/AmountPlant';
 import ImagePlant from './../components/ImagePlant';
 import NamePlant from './../components/NamePlant';
 import TpmPlant from './../components/TpmPlant';
+import Home from './../pages/Home';
 
 
 
@@ -13,19 +14,11 @@ class AddPlant extends Component {
     const BasicExample = () => (
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to="/addplant/image">Image</Link>
-            </li>
-            <li>
-              <Link to="/addplant/name">Name</Link>
-            </li>
-          </ul>
-
-          <hr />
-
           <Route path="/addplant/name" component={Name} />
           <Route path="/addplant/image" component={Image} />
+            <Route path="/addplant/amount" component={Amount} />
+            <Route path="/addplant/tpm" component={Tpm} />
+
         </div>
       </Router>
     );
@@ -43,8 +36,21 @@ const Image = () => (
   </div>
 );
 
+const Amount = () => (
+  <div>
+    <AmountPlant/>
+  </div>
+);
+
+const Tpm = () => (
+  <div>
+    <TpmPlant />
+  </div>
+);
+
     return (
       <div>
+        <h1>Lägg till din blomma</h1>
         {BasicExample()}
       </div>
     );

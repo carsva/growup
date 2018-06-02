@@ -8,7 +8,7 @@ class ImagePlant extends Component {
         <h5>Show the uploaded image here</h5>
         <button>Upload image</button>
         <br/>
-        <Link to="/addplant/AmountPlant"><button>Next</button></Link>
+        <Link to="/addplant/amount"><button>Next</button></Link>
       </div>
     );
   }

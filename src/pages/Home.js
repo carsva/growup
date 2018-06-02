@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Intro extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="center">
@@ -11,4 +11,4 @@ class Intro extends Component {
   }
 }
 
-export default Intro;
+export default Home;
