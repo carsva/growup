@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {  Link } from "react-router-dom";
+import Header from './../components/Header';
+import AddPlantHeader from './../components/AddPlantHeader';
 
 class NamePlant extends Component {
   render() {
+
+
+
     return (
-      <div className="center">
+        <div className="center">
+          <Header />
+          <AddPlantHeader/>
           <input type="text" ref="name" placeholder="Name of your plant"></input>
-          <Link to="/addplant/image"><button>Next</button></Link>
-          <br/>
-      </div>
+          <Link to="image"><button>Next</button></Link>
+        </div>
     );
   }
 }

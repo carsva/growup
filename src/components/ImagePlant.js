@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Header from './../components/Header';
+import AddPlantHeader from './../components/AddPlantHeader';
+
+
+
+
 
 class ImagePlant extends Component {
   render() {
+
+
+
     return (
-      <div className="center">
-        <h5>Show the uploaded image here</h5>
-        <button>Upload image</button>
-        <br/>
-        <Link to="/addplant/amount"><button>Next</button></Link>
-      </div>
+        <div className="center">
+          <Header />
+          <AddPlantHeader/>
+            <div className="center">
+              <h5>Show the uploaded image here</h5>
+              <button>Upload image</button>
+            </div>
+              <br/>
+                <br/>
+          <Link to="amount"><button>Next</button></Link>
+        </div>
     );
   }
 }
