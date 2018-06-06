@@ -14,8 +14,10 @@ class NamePlant extends Component {
           <Header />
           <AddPlantHeader/>
           <input type="text" ref="name" placeholder="Name of your plant"></input>
-          <Link to="image"><button>Next</button></Link>
-          <Link to="/home"><button>Cancel</button></Link>
+          <br/>
+          <Link to="image">Next</Link>
+          <br/>
+          <Link to="/home">Cancel</Link>
           <Footer />
         </div>
     );

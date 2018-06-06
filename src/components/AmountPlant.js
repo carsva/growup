@@ -32,8 +32,9 @@ class ImagePlant extends Component {
               <br/>
             </div>
             <br/>
-          <Link to="tpm"><button>Next</button></Link>
-          <Link to="/home"><button>Cancel</button></Link>
+          <Link to="tpm">Next</Link>
+          <br/>
+          <Link to="/home">Cancel</Link>
           <Footer />
         </div>
     );

@@ -17,9 +17,9 @@ class AddPlant extends Component {
         <div className="center">
           <Header />
           <AddPlantHeader/>
-          <Link to="/addplant/name"><button>Next</button></Link>
+          <Link to="/addplant/name">Next</Link>
           <br/>
-          <Link to="/home"><button>Cancel</button></Link>
+          <Link to="/home">Cancel</Link>
           <Footer />
         </div>
     );

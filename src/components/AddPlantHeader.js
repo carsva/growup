@@ -7,7 +7,7 @@ class AddPlantHeader extends Component {
     return (
 
         <div>
-          <h1>Add plant header</h1>
+          <p>Add a plant</p>
         </div>
 
     );

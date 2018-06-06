@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
 
         <div>
-          <Link to="/reg">Log out</Link>
+          <Link to="/reg"><button>Log out</button></Link>
         </div>
 
     );
