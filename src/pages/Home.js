@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Header from './../components/Header';
+import PlantStatus from './../components/PlantStatus';
+import Footer from './../components/Footer';
 
 class Home extends Component {
   render() {
     return (
       <div className="center">
-        <h2>Alla växter är vattnade!</h2>
+        <PlantStatus />
       </div>
     );
   }
