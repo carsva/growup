@@ -10,8 +10,7 @@ import NamePlant from './components/NamePlant';
 import TpmPlant from './components/TpmPlant';
 import PlantStatus from './components/PlantStatus';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import './App.css';
-
+import './App.min.css';
 
 class App extends Component {
 
