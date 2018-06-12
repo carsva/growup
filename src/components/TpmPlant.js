@@ -4,22 +4,24 @@ import Header from './../components/Header';
 import AddPlantHeader from './../components/AddPlantHeader';
 import Footer from './../components/Footer';
 
-
-
-
-
 class ImagePlant extends Component {
+
+  addTpmHandlerChild(e) {
+    e.preventDefault();
+    let tpm = this.refs.tpm.value;
+    let addTpm = this.props.addTpmHandler;
+    addTpm(tpm);
+  }
+
   render() {
 
-
-
     return (
+      <div>
+      <form onSubmit={(e) => this.addTpmHandlerChild(e)}>
         <div className="center">
-          <Header />
-          <AddPlantHeader/>
             <div className="center">
                 <h5>How many times per month does your plant need water?</h5>
-                <select name="amount" form="amount">
+                <select name="tpm" form="tpm" ref="tpm">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -30,13 +32,11 @@ class ImagePlant extends Component {
                   <option value="8">8</option>
                 </select>
                 <br/>
+                <button>Send</button>
               </div>
-            <br/>
-          <Link to="/home">Next</Link>
-          <br/>
-          <Link to="/home">Cancel</Link>
-          <Footer />
         </div>
+      </form>
+      </div>
     );
   }
 }
