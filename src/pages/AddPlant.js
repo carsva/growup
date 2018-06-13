@@ -51,7 +51,7 @@ class AddPlant extends Component {
     isAmountVisable: false,
     isTpmVisable: false
     })
-    this.props.history.push('/reg');
+    this.props.history.push('/main');
   }
 
   formSendHandler(e) {

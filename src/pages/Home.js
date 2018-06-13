@@ -7,6 +7,7 @@ import ImagePlant from '../components/ImagePlant';
 import AmountPlant from '../components/AmountPlant';
 import TpmPlant from '../components/TpmPlant';
 import Reg from '../pages/Reg';
+import Main from '../pages/Main';
 import AddPlant from '../pages/AddPlant';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -23,7 +24,7 @@ class Home extends Component {
               <Route path='/image'component={ImagePlant}/>
               <Route path='/amount'component={AmountPlant}/>
               <Route path='/tpm'component={TpmPlant}/>
-              <Route path='/reg' exact component={Reg}/>
+              <Route path='/main' exact component={Main}/>
             </Switch>
           </div>
         </Router>

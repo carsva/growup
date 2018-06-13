@@ -12,10 +12,7 @@ class Main extends Component {
 
     return (
       <div className="center">
-        <Header />
-        <p>Welcome to this simple and much conveniant , lets save some plants today!</p>
-        <Link to="addplant"><button>Next</button></Link>
-        <Footer />
+        <p>Your Plants</p>
       </div>
 
     );
