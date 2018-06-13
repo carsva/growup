@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './../components/Header';
 import PlantStatus from './../components/PlantStatus';
 import Footer from './../components/Footer';
 import NamePlant from '../components/NamePlant';
@@ -7,27 +6,48 @@ import ImagePlant from '../components/ImagePlant';
 import AmountPlant from '../components/AmountPlant';
 import TpmPlant from '../components/TpmPlant';
 import Reg from '../pages/Reg';
-import Main from '../pages/Main';
 import AddPlant from '../pages/AddPlant';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Home extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      addplantVisable: false
+    }
+  }
+
+addFirstPlant(e) {
+  console.log(e);
+  this.setState({
+    addplantVisable: true
+  })
+}
+
+componentDidMount() {
+  console.log('Asd')
+}
+
+
     render() {
+      let htmlContent = "";
+
+      if(this.state.addplantVisable === true) {
+        htmlContent = <AddPlant history={this.props.history}/>
+      } else {
+        htmlContent =
+        <div>
+          <h3>Welcome to the no.1 plant app</h3>
+          <button onClick={(e) => this.addFirstPlant(e)}>Add your first plant</button>
+        </div>
+
+      }
 
       return (
-        <Router>
-          <div className="center">
-              <Header />
-              <Switch>
-              <Route path='/' exact component={AddPlant}/>
-              <Route path='/image'component={ImagePlant}/>
-              <Route path='/amount'component={AmountPlant}/>
-              <Route path='/tpm'component={TpmPlant}/>
-              <Route path='/main' exact component={Main}/>
-            </Switch>
-          </div>
-        </Router>
+        <div>
+          {htmlContent}
+        </div>
       );
    }
  }

@@ -8,8 +8,6 @@ class Main extends Component {
 
   render() {
 
-
-
     return (
       <div className="center">
         <p>Your Plants</p>

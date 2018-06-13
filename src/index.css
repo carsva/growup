@@ -6,3 +6,7 @@ body {
 .hidden {
   display:none;
 }
+
+.knapp {
+  color: red;
+}

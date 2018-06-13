@@ -3,6 +3,7 @@ import Main from './pages/Main';
 import AddPlant from './pages/AddPlant';
 import Home from './pages/Home';
 import Reg from './pages/Reg';
+import Header from './components/Header';
 import YourPlants from './pages/YourPlants';
 import AmountPlant from './components/AmountPlant';
 import ImagePlant from './components/ImagePlant';
@@ -18,10 +19,19 @@ class App extends Component {
 
 
   render() {
-return (
+    return (
   <Router>
-    <div>
-      <Route path='/' component={Home}/>
+    <div className="center">
+        <Header />
+        <Switch>
+        <Route path='/' exact component={Home}/>
+        <Route path='/home' exact component={Home}/>
+        <Route path='/addplant' exact component={AddPlant}/>
+        <Route path='/image'component={ImagePlant}/>
+        <Route path='/amount'component={AmountPlant}/>
+        <Route path='/tpm'component={TpmPlant}/>
+        <Route path='/main' exact component={Main}/>
+      </Switch>
     </div>
   </Router>
     );

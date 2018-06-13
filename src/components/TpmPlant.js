@@ -11,6 +11,7 @@ class ImagePlant extends Component {
     let tpm = this.refs.tpm.value;
     let addTpm = this.props.addTpmHandler;
     addTpm(tpm);
+
   }
 
   render() {
