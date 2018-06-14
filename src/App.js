@@ -16,7 +16,14 @@ import './App.min.css';
 
 class App extends Component {
 
+ constructor() {
+   super();
+   this.state = {
+     test: 'joel',
+     blomma: 'ja'
+   }
 
+ }
 
   render() {
     return (
@@ -25,8 +32,14 @@ class App extends Component {
         <Header />
         <Switch>
         <Route path='/' exact component={Home}/>
-        <Route path='/home' exact component={Home}/>
-        <Route path='/addplant' exact component={AddPlant}/>
+        <Route exact path="/addplant" render={(props) => (
+          <AddPlant
+            test={this.state.test}
+            blomma={this.state.blomma}
+            masterState={this.state}
+
+          />
+        )} />
         <Route path='/image'component={ImagePlant}/>
         <Route path='/amount'component={AmountPlant}/>
         <Route path='/tpm'component={TpmPlant}/>
