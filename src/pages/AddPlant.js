@@ -50,8 +50,9 @@ class AddPlant extends Component {
     isNameVisable: false,
     isAmountVisable: false,
     isTpmVisable: false
+
     })
-    this.props.history.push('/home');
+    this.props.history.push('/')
   }
 
   formSendHandler(e) {
@@ -80,10 +81,6 @@ class AddPlant extends Component {
 
 
   render() {
-    console.log(this.state.temp.name)
-    console.log(this.state.temp.amount)
-    console.log(this.state.temp.tpm)
-
     return (
       <div className="center">
           <AddPlantHeader/>

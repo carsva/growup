@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Main from './pages/Main';
 import AddPlant from './pages/AddPlant';
-import Home from './pages/Home';
 import Reg from './pages/Reg';
 import Header from './components/Header';
 import YourPlants from './pages/YourPlants';
@@ -19,31 +18,37 @@ class App extends Component {
  constructor() {
    super();
    this.state = {
-     test: 'joel',
-     blomma: 'ja'
+     addplantVisable: false
    }
 
  }
 
   render() {
+    let htmlContent = "";
+
+        if(this.state.addplantVisable === true) {
+          htmlContent = <AddPlant history={this.props.history}/>
+        } else {
+          htmlContent =
+          <div>
+            <h3>Welcome to the no.1 plant app</h3>
+            <button onClick={(e) => this.addFirstPlant(e)}>Add your first plant</button>
+          </div>
+
+        }
+
+
     return (
   <Router>
     <div className="center">
         <Header />
         <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route exact path="/addplant" render={(props) => (
-          <AddPlant
-            test={this.state.test}
-            blomma={this.state.blomma}
-            masterState={this.state}
-
-          />
-        )} />
+        <Route path='/' exact component={Main} />
+        <Route path='/main'component={Main}/>
         <Route path='/image'component={ImagePlant}/>
         <Route path='/amount'component={AmountPlant}/>
         <Route path='/tpm'component={TpmPlant}/>
-        <Route path='/main' exact component={Main}/>
+          <Route path='/addplant'component={AddPlant}/>
       </Switch>
     </div>
   </Router>
@@ -52,3 +57,43 @@ class App extends Component {
 }
 
 export default App;
+// constructor() {
+//   super();
+//   this.state = {
+//     addplantVisable: false
+//   }
+// }
+//
+// addFirstPlant(e) {
+// console.log(e);
+// this.setState({
+//   addplantVisable: true
+// })
+// }
+//
+// componentDidMount() {
+// console.log('Asd')
+// }
+//
+//
+//   render() {
+//     let htmlContent = "";
+//
+//     if(this.state.addplantVisable === true) {
+//       htmlContent = <AddPlant history={this.props.history}/>
+//     } else {
+//       htmlContent =
+//       <div>
+//         <h3>Welcome to the no.1 plant app</h3>
+//         <button onClick={(e) => this.addFirstPlant(e)}>Add your first plant</button>
+//       </div>
+//
+//     }
+//
+//     return (
+//       <div>
+//         {htmlContent}
+//       </div>
+//     );
+//  }
+// }

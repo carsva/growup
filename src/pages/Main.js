@@ -10,7 +10,8 @@ class Main extends Component {
 
     return (
       <div className="center">
-        <p>Your Plants</p>
+        <p>Welcome to the plant save app</p>
+        <Link to="/addplant"><button>Add a plant</button></Link>
       </div>
 
     );
