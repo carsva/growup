@@ -4,7 +4,7 @@ export const AppContext = React.createContext('plant');
 
 let id = 0;
 
-const getId = () => ++id;
+const getId = () => ++id + '';
 
 const defaultPlant = {
   id: null,
@@ -36,6 +36,28 @@ export class AppProvider extends React.Component {
     this.setState(({ theme }) => ({
       theme: theme === 'light' ? 'dark' : 'light',
     }));
+  };
+
+  editPlant = e => {
+    e.preventDefault();
+
+    const plantId = e.target.id.value;
+    const newValues = {
+      name: e.target.name.value,
+    };
+
+    this.setState({
+      ...this.state,
+      plants: this.state.plants.map(plant => {
+        if (plant.id === plantId) {
+          return {
+            ...plant,
+            ...newValues,
+          };
+        }
+        return plant;
+      }),
+    });
   };
 
   newPlant = e => {
@@ -70,6 +92,7 @@ export class AppProvider extends React.Component {
       ...this.state,
       toggleTheme: this.toggleTheme,
       newPlant: this.newPlant,
+      editPlant: this.editPlant,
     };
 
     return (

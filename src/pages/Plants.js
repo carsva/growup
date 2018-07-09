@@ -12,10 +12,7 @@ class Plants extends Component {
             <ul>
               {state.plants.map(({ id, name }) => (
                 <li key={id}>
-                  Plant: {name}{' '}
-                  <Link to="/plants/edit" params={{ id: id }}>
-                    Edit
-                  </Link>
+                  Plant: {name} <Link to={`/plants/edit/${id}`}>Edit</Link>
                 </li>
               ))}
             </ul>

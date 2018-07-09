@@ -14,6 +14,7 @@ import AddPlantHeader from './components/AddPlantHeader';
 import './App.min.css';
 import { AppProvider } from './AppContext';
 import Plants from './pages/Plants';
+import EditPlant from './pages/EditPlant';
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route path="/amount" component={AmountPlant} />
                 <Route path="/tpm" component={TpmPlant} />
                 <Route path="/addplant" component={AddPlant} />
+                <Route path="/plants/edit/:id" component={EditPlant} />
                 <Route path="/plants" component={Plants} />
               </Switch>
             </div>
