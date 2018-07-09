@@ -2,11 +2,23 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
+let id = 0;
+
+const getId = () => ++id;
+
 const defaultPlant = {
+  id: null,
   name: null,
   amount: null,
   timesPerMonth: null,
 };
+
+function newPlant() {
+  return {
+    ...defaultPlant,
+    id: getId(),
+  };
+}
 
 export class AppProvider extends React.Component {
   state = {
@@ -14,7 +26,7 @@ export class AppProvider extends React.Component {
 
     plants: [
       {
-        ...defaultPlant,
+        ...newPlant(),
         name: 'Something',
       },
     ],
@@ -44,7 +56,7 @@ export class AppProvider extends React.Component {
       plants: [
         ...this.state.plants,
         {
-          ...defaultPlant,
+          ...newPlant(),
           name: e.target.name.value,
         },
       ],

@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddPlantHeader from './components/AddPlantHeader';
 import './App.min.css';
 import { AppProvider } from './AppContext';
-import NewPlant from './pages/NewPlant';
+import Plants from './pages/Plants';
 
 class App extends Component {
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
                 <Route path="/amount" component={AmountPlant} />
                 <Route path="/tpm" component={TpmPlant} />
                 <Route path="/addplant" component={AddPlant} />
-                <Route path="/newplant" component={NewPlant} />
+                <Route path="/plants" component={Plants} />
               </Switch>
             </div>
           </div>

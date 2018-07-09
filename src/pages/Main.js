@@ -9,7 +9,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Link to="/newplant">New plant</Link>
+        <Link to="/plants">Plants</Link>
         <AppConsumer>
           {state => (
             <div>
