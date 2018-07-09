@@ -52,7 +52,7 @@ class AddPlant extends Component {
     isTpmVisable: false
 
     })
-    this.props.history.push('/')
+    this.goBackTest()
   }
 
   formSendHandler(e) {
@@ -78,6 +78,12 @@ class AddPlant extends Component {
     }
   }
 
+  goBackTest(e) {
+    var goBackTest = this.props.goBackTest;
+    // goBackTest(this.state.temp);
+    goBackTest(this.state.temp);
+  }
+
 
 
   render() {
@@ -85,6 +91,7 @@ class AddPlant extends Component {
       <div className="center">
           <AddPlantHeader/>
           {this.isHidden()}
+          <button onClick={(e) => this.goBackTest(e)}>Back</button>
       </div>
     )
   }

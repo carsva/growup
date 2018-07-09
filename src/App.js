@@ -15,41 +15,22 @@ import './App.min.css';
 
 class App extends Component {
 
- constructor() {
-   super();
-   this.state = {
-     addplantVisable: false
-   }
-
- }
-
   render() {
-    let htmlContent = "";
-
-        if(this.state.addplantVisable === true) {
-          htmlContent = <AddPlant history={this.props.history}/>
-        } else {
-          htmlContent =
-          <div>
-            <h3>Welcome to the no.1 plant app</h3>
-            <button onClick={(e) => this.addFirstPlant(e)}>Add your first plant</button>
-          </div>
-
-        }
-
 
     return (
   <Router>
     <div className="center">
         <Header />
+        <div>
         <Switch>
         <Route path='/' exact component={Main} />
         <Route path='/main'component={Main}/>
         <Route path='/image'component={ImagePlant}/>
         <Route path='/amount'component={AmountPlant}/>
         <Route path='/tpm'component={TpmPlant}/>
-          <Route path='/addplant'component={AddPlant}/>
+        <Route path='/addplant'component={AddPlant}/>
       </Switch>
+     </div>
     </div>
   </Router>
     );
