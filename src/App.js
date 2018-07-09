@@ -9,30 +9,28 @@ import ImagePlant from './components/ImagePlant';
 import NamePlant from './components/NamePlant';
 import TpmPlant from './components/TpmPlant';
 import PlantStatus from './components/PlantStatus';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddPlantHeader from './components/AddPlantHeader';
 import './App.min.css';
 
 class App extends Component {
-
   render() {
-
     return (
-  <Router>
-    <div className="center">
-        <Header />
-        <div>
-        <Switch>
-        <Route path='/' exact component={Main} />
-        <Route path='/main'component={Main}/>
-        <Route path='/image'component={ImagePlant}/>
-        <Route path='/amount'component={AmountPlant}/>
-        <Route path='/tpm'component={TpmPlant}/>
-        <Route path='/addplant'component={AddPlant}/>
-      </Switch>
-     </div>
-    </div>
-  </Router>
+      <Router>
+        <div className="center">
+          <Header />
+          <div>
+            <Switch>
+              <Route path="/" exact component={Main} />
+              <Route path="/main" component={Main} />
+              <Route path="/image" component={ImagePlant} />
+              <Route path="/amount" component={AmountPlant} />
+              <Route path="/tpm" component={TpmPlant} />
+              <Route path="/addplant" component={AddPlant} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
     );
   }
 }
