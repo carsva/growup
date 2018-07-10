@@ -23,7 +23,7 @@ function newPlant() {
 export class AppProvider extends React.Component {
   state = {
     theme: 'light',
-
+    superhero: 'Calle',
     plants: [
       {
         ...newPlant(),
