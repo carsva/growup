@@ -8,13 +8,22 @@ class PlantForm extends Component {
       <AppConsumer>
         {state => (
           <div>
-            <form autocomplete="false">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                autoComplete="off"
-              />
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+
+                const values = {
+                  name: e.target.name.value,
+                  amount: e.target.amount.value,
+                  timesPerMonth: e.target.timesPerMonth.value,
+                };
+
+                state.newPlant(values);
+
+                e.target.name.value = '';
+              }}
+            >
+              <input type="text" name="name" placeholder="Name" />
               <br />
 
               <select name="amount">
@@ -47,6 +56,7 @@ class PlantForm extends Component {
               <br />
               <button>Add plant</button>
             </form>
+            <Link to="/">Back</Link>
             <pre>{JSON.stringify(state, null, 4)}</pre>
           </div>
         )}

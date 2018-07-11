@@ -17,7 +17,21 @@ class Plants extends Component {
               ))}
             </ul>
             <h2>Add plant</h2>
-            <form onSubmit={state.newPlant}>
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+
+                const values = {
+                  name: e.target.name.value,
+                  amount: e.target.amount.value,
+                  timesPerMonth: e.target.timesPerMonth.value,
+                };
+
+                state.newPlant(values);
+
+                e.target.name.value = '';
+              }}
+            >
               <input type="text" name="name" />
               <input type="submit" />
             </form>

@@ -21,7 +21,7 @@ class App extends Component {
                 <Route path="/main" component={Main} />
                 <Route path="/plantform" component={PlantForm} />
                 <Route path="/start" component={Start} />
-                <Route path="/plants/edit/:id" component={EditPlant} />
+                <Route path="/edit/:id" component={EditPlant} />
                 <Route path="/plants" component={Plants} />
               </Switch>
             </div>

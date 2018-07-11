@@ -38,18 +38,15 @@ export class AppProvider extends React.Component {
     }));
   };
 
-  editPlant = e => {
-    e.preventDefault();
-
-    const plantId = e.target.id.value;
-    const newValues = {
-      name: e.target.name.value,
-    };
+  editPlant = (id, newValues) => {
+    {
+      /*3.The name is passed into the (e)  */
+    }
 
     this.setState({
       ...this.state,
       plants: this.state.plants.map(plant => {
-        if (plant.id === plantId) {
+        if (plant.id === id) {
           return {
             ...plant,
             ...newValues,
@@ -60,7 +57,7 @@ export class AppProvider extends React.Component {
     });
   };
 
-  newPlant = e => {
+  newPlant = values => {
     // const obj = {
     //   foo: 'bar',
     // }
@@ -71,20 +68,16 @@ export class AppProvider extends React.Component {
     // }
     // const obj3 = Object.assign({}, obj)
 
-    e.preventDefault();
-
     this.setState({
       ...this.state,
       plants: [
         ...this.state.plants,
         {
           ...newPlant(),
-          name: e.target.name.value,
+          ...values,
         },
       ],
     });
-
-    e.target.name.value = '';
   };
 
   render() {

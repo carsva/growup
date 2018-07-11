@@ -21,12 +21,22 @@ class EditPlantForm extends Component {
     });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const plantId = e.target.id.value;
+    const newValues = {
+      name: e.target.name.value,
+    };
+
+    this.props.save(plantId, newValues);
+  };
+
   render() {
-    const { handleSubmit } = this.props;
     const { values } = this.state;
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <input type="hidden" name="id" value={values.id} />
         <input
           type="text"
@@ -34,12 +44,16 @@ class EditPlantForm extends Component {
           value={values.name}
           onChange={this.handleChange('name')}
         />
-
-        <input type="submit" />
+        {/*1.When pressing save, the information in 
+    the form "name" is sent to handleSubmit which 
+    is a function in the parent that was sent
+    down as a a prop */}
+        <button>Save</button>
       </form>
     );
   }
 }
+
 const EditPlant = props => {
   const plantId = props.match.params.id;
 
@@ -52,11 +66,13 @@ const EditPlant = props => {
             return 'No plant found';
           }
           return (
-            <EditPlantForm values={plant} handleSubmit={state.editPlant} />
+            /*The Global state is passed down as values and sets the 
+            state in editPlant to the the same as the global state*/
+            <EditPlantForm values={plant} save={state.editPlant} />
           );
         }}
       </AppConsumer>
-      <Link to="/plants">Back to plants</Link>
+      <Link to="/">Back to plants</Link>
     </div>
   );
 };
