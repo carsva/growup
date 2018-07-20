@@ -5,7 +5,7 @@ import Header from './components/Header';
 import PlantForm from './components/PlantForm';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AppProvider } from './AppContext';
-import Plants from './pages/Plants';
+
 import EditPlant from './pages/EditPlant';
 
 class App extends Component {
@@ -22,7 +22,6 @@ class App extends Component {
                 <Route path="/plantform" component={PlantForm} />
                 <Route path="/start" component={Start} />
                 <Route path="/edit/:id" component={EditPlant} />
-                <Route path="/plants" component={Plants} />
               </Switch>
             </div>
           </div>

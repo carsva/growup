@@ -10,7 +10,7 @@ let id = 0;
 to every new Id. We add the empty string just because we need to
 make it into a string. Why is not clear to me yet! :) 
  */
-const getId = () => ++id + '';
+const getId = () => (++id).toString();
 
 //We set up a default plant object
 const defaultPlant = {
@@ -20,12 +20,17 @@ const defaultPlant = {
   timesPerMonth: null,
 };
 
-function newPlant() {
+/* 
+The newPlant function is recieving a name, amount
+and timesPerMonth values from the PlantForm.js.
+
+*/
+const MakeNewPlant = () => {
   return {
     ...defaultPlant,
     id: getId(),
   };
-}
+};
 /* We create our global context state here below. 
 All other components will have access to this state*/
 export class AppProvider extends React.Component {
@@ -44,8 +49,8 @@ export class AppProvider extends React.Component {
             "amount": null,
             "timesPerMonth": null
         }*/
-        
-        ...newPlant(),
+
+        ...MakeNewPlant(),
         name: 'Something',
       },
     ],
@@ -64,7 +69,6 @@ export class AppProvider extends React.Component {
 
   editPlant = (id, newValues) => {
     {
-      
     }
 
     this.setState({
@@ -81,14 +85,21 @@ export class AppProvider extends React.Component {
     });
   };
 
-  newPlant = values => {
+/*  
+The values from the form is passed into the below function
+with values containing name, amount, timesPerMonth.
+MakeNewPlant is a function making a new idea with some
+placeholder values. When adding the ...values with spread
+operator the placeholder values are replaced.
+*/
 
+  newPlant = values => {
     this.setState({
       ...this.state,
       plants: [
         ...this.state.plants,
         {
-          ...newPlant(),
+          ...MakeNewPlant(),
           ...values,
         },
       ],

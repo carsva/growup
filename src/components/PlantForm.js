@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 class PlantForm extends Component {
   render() {
     return (
+      /* Again we use the AppConsumer to wrap everything around it
+      in order to be able to access the global state 
+      
+      We have a form that lets you add a plant that takes a name,
+      amount of water, times per month values. When submitting the
+      form we have an anonymous function that makes a const called
+      values. it contains all the input fields.
+
+      After that you will send this newly created const values and
+      send its values to the global function called newPlant.
+
+      after sending it cleares the field input by setting below to
+      and empty string. 
+      e.target.name.value = ''; 
+
+
+      
+      */
       <AppConsumer>
         {state => (
           <div>
