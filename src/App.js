@@ -9,26 +9,26 @@ import { AppProvider } from './AppContext';
 import EditPlant from './pages/EditPlant';
 
 class App extends Component {
-  render() {
-    return (
-      <AppProvider>
-        <Router>
-          <div className="center">
-            <Header />
-            <div>
-              <Switch>
-                <Route path="/" exact component={Start} />
-                <Route path="/main" component={Main} />
-                <Route path="/plantform" component={PlantForm} />
-                <Route path="/start" component={Start} />
-                <Route path="/edit/:id" component={EditPlant} />
-              </Switch>
-            </div>
-          </div>
-        </Router>
-      </AppProvider>
-    );
-  }
+	render() {
+		return (
+			<AppProvider>
+				<Router>
+					<div className="center">
+						<Header />
+						<div>
+							<Switch>
+								<Route path="/" exact component={Start} />
+								<Route path="/main" component={Main} />
+								<Route path="/plantform" component={PlantForm} />
+								<Route path="/start" component={Start} />
+								<Route path="/edit/:id" component={EditPlant} />
+							</Switch>
+						</div>
+					</div>
+				</Router>
+			</AppProvider>
+		);
+	}
 }
 
 export default App;
